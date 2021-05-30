@@ -23,10 +23,17 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        $name='required';
-        $email='required|email|unique:users';
-        $password ='required';
-        $role_id='required';
+        if($this->method()=='PUT'){
+            $name='required';
+            $email='required|email';
+            $password ='required';
+            $role_id='required';
+        }else{
+            $name='required';
+            $email='required|email|unique:users';
+            $password ='required';
+            $role_id='required';
+        }
         return [
             'name'=>$name,
             'email'=>$email,
@@ -34,4 +41,6 @@ class UserRequest extends FormRequest
             'role_id'=>$role_id,
         ];
     }
+
+   
 }

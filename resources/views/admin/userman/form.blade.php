@@ -14,7 +14,7 @@
 
             @include('partials.flash')
 
-            @if(!empty($category))
+            @if(!empty($users))
                 {!! Form::model($users,['url'=>['admin/user',$users->id]]) !!}
                 {!! Form::hidden('id')!!}
                 <input name="_method" type="hidden" value="PUT">
@@ -28,8 +28,12 @@
                 {!! Form::text('name',null,['class'=>'form-control mb-3','placeholder'=>'Nama User']) !!}
                 {!! Form::label('name','Email',['class'=>'mb-3']) !!}
                 {!! Form::text('email',null,['class'=>'form-control mb-3','placeholder'=>'E-Mail']) !!}
+                @if(!empty($users))
+                {!! Form::hidden('password',null,['class'=>'form-control mb-3','placeholder'=>'password']) !!}
+                @else
                 {!! Form::label('name','Password',['class'=>'mb-3']) !!}
                 {!! Form::text('password',null,['class'=>'form-control mb-3','placeholder'=>'password']) !!}
+                @endif
                 {!! Form::label('name','Role',['class'=>'mb-3']) !!}                
                 {!! Form::select('role_id', array('1' => 'Super', '0' => 'Regular'), 'S',['class'=>'form-control mb-3']); !!}
             </div>

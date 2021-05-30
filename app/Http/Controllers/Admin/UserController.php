@@ -20,13 +20,36 @@ class UserController extends Controller
 
     public function store(UserRequest $request){
         $param = $request->except('_token');
-        dump($param);
+        $param['password']= bcrypt($param['password']);
         if(User::create($param)){
-            if(User::create($param)){
-                Session::flash('success', 'User has been created');
-            }
+                Session::flash('success', 'User has been created');            
             return redirect('admin/user');
         }
+    }
+
+    public function edit($id){
+        $user = User::findOrFail($id);
+        $this->data['users'] = $user;
+        return view('admin.userman.form',$this->data);
+        
+    }
+
+    public function update(UserRequest $request, $id){
+        $params = $request->except('_token');
+        $user = User::findOrFail($id);
+        
+        if($user->update($params)){
+            Session::flash('success', 'User has been updated');
+        }
+        return redirect('admin/user');
+    }
+
+    public function destroy($id){
+        $user = User::findOrFail($id);
+        if($user->delete()){
+            Session::flash('success', 'User has been deleted');
+        }
+        return redirect('admin/user');
     }
 
 }

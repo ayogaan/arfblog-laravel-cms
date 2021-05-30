@@ -23,8 +23,8 @@
 								    <td>{{$i->email}}</td>
 								    <td>{{$i->role_id}}</td>
 								    <td>
-										<a class="btn btn-warning btn-sm"  href="{{URL::to('admin/users/'. $i->id .'/edit')}}"> Edit </a>
-										{!! Form::open(['url'=>'admin/users/'.$i->id,'style'=>'display:inline-block']) !!}
+										<a class="btn btn-warning btn-sm"  href="{{URL::to('admin/user/'. $i->id .'/edit')}}"> Edit </a>
+										{!! Form::open(['url'=>'admin/user/'.$i->id,'style'=>'display:inline-block']) !!}
 										{!! Form::hidden('_method','DELETE')!!}
 										{!! Form::submit('remove',['class'=>'btn btn-danger btn-sm'])!!}
 										{!! Form::close()!!}
