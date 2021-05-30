@@ -25,13 +25,13 @@
             
             <div class="form-group">
                 {!! Form::label('name','Name',['class'=>'mb-3']) !!}
-                {!! Form::text('nama',null,['class'=>'form-control mb-3','placeholder'=>'Nama User']) !!}
+                {!! Form::text('name',null,['class'=>'form-control mb-3','placeholder'=>'Nama User']) !!}
                 {!! Form::label('name','Email',['class'=>'mb-3']) !!}
                 {!! Form::text('email',null,['class'=>'form-control mb-3','placeholder'=>'E-Mail']) !!}
                 {!! Form::label('name','Password',['class'=>'mb-3']) !!}
                 {!! Form::text('password',null,['class'=>'form-control mb-3','placeholder'=>'password']) !!}
                 {!! Form::label('name','Role',['class'=>'mb-3']) !!}                
-                {!! Form::select('role', array('1' => 'Super', '0' => 'Regular'), 'S',['class'=>'form-control mb-3']); !!}
+                {!! Form::select('role_id', array('1' => 'Super', '0' => 'Regular'), 'S',['class'=>'form-control mb-3']); !!}
             </div>
             <div class="form-footer pt-5 border-top">
                 <button style="float:right;" type="submit" class="btn-primary btn p-3">Add</button>             

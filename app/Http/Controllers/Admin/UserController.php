@@ -22,7 +22,7 @@ class UserController extends Controller
         $param = $request->except('_token');
         dump($param);
         if(User::create($param)){
-            if(Category::create($param)){
+            if(User::create($param)){
                 Session::flash('success', 'User has been created');
             }
             return redirect('admin/user');

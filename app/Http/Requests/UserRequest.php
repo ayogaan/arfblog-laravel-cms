@@ -25,17 +25,13 @@ class UserRequest extends FormRequest
     {
         $name='required';
         $email='required|email|unique:users';
-        $password =['required|
-        min:6|
-        regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|
-        confirmed'];
-        $role='required';
+        $password ='required';
+        $role_id='required';
         return [
             'name'=>$name,
             'email'=>$email,
             'password'=>$password,
-            'role_id'=>$role,
-
+            'role_id'=>$role_id,
         ];
     }
 }
