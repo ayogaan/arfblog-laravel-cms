@@ -84,7 +84,7 @@ ArfanYoga
 <li><a class="text-decoration-none" style="color:black" target="_blank" href="https://www.facebook.com/ProgateID/">Facebook</a></li>
 </ul>
 </div>
-<div class="footer__copyright col-sm-12">© 2014 Progate, Inc.</div>
+<div class="footer__copyright col-sm-12">© 2021 Ayogaan.</div>
 </div>
 </div>
 </div>

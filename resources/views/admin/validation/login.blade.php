@@ -23,52 +23,13 @@
                     
                 </div>
             </div>
+            
+            
+            
             <div class="col-lg-6">
-                <div class="card2 card border-0 pt-5 pb-3 pl-3">
-                    <div class="row mb-4 px-3">
-                        <h2 class="mb-0 mt-2">Login</h2>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="row px-3 mb-1 p-0">
-                        <label class="col-md-3">
-                            <h6 class="mb-0 mx-3">Email Address</h6>
-                        </label> 
-                        
-                        <input class="mb-4 mx-5 mb-3 form-control" type="text" name="email" placeholder="Enter a valid email address">
-                    
-                    </div>
-                    
+                @yield('content')
 
 
-                    <div class="row px-3 mb-1 p-0">
-                        <label class="col-md-3 mx-3">
-                            <h6 class="mb-0">Password</h6>
-                        </label> 
-                        
-                        <input class="mb-4 mx-5 form-control" type="text" name="email" placeholder="Enter a valid email address">
-                        <div class="row px-5 mb-4">
-                            <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
-                        </div>
-                    
-                    
-                    </div>
-                
-
-
-                    
-                    <div class="row mb-3 px-3">
-                        <div class="col-md-4 mx-3">
-                            <button type="submit" class="btn btn-primary text-center">Login</button>
-                        </div>
-                    </div>
-                    <div class="row mb-4 px-3">
-                        <div class="col-md-4 mx-3">
-                        <small class="font-weight-bold">Don't have an account? <a class="text-danger ">Register</a></small>
-                    </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="bg-blue py-4" style="background-color: #f5f5f5;"> 

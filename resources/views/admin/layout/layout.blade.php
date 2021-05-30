@@ -104,7 +104,7 @@
                     <div class="sub-menu">
                       <li class="active">
                         <a class="sidenav-item-link" href="index.html">
-                          <span class="nav-text">Ecommerce</span>
+                          <span class="nav-text">Arfblog</span>
                         </a>
                       </li>
 
@@ -122,17 +122,19 @@
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#app"
                     aria-expanded="false" aria-controls="app">
                     <i class="mdi mdi-pencil-box-multiple"></i>
-                    <span class="nav-text">Product</span> <b class="caret"></b>
+                    <span class="nav-text">Article</span> <b class="caret"></b>
                   </a>
 
                   <ul class="collapse " id="app" data-parent="#sidebar-menu">
                     <div class="sub-menu">
+                      
+                      @if(Auth::user()->role_id>0)
                       <li class="">
                         <a class="sidenav-item-link" href="{{URL::to('admin/categories')}}">
                           <span class="nav-text">Category</span>
                         </a>
                       </li>
-
+                      @endif
                       <li class="">
                         <a class="sidenav-item-link" href="contacts.html">
                           <span class="nav-text">Contacts</span>
@@ -1142,7 +1144,7 @@
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="{{URL::asset('assets/img/user/user.png')}}" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
@@ -1170,9 +1172,17 @@
                         <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
                       </li>
 
+
                       <li class="dropdown-footer">
-                        <a href="index.html"> <i class="mdi mdi-logout"></i> Log Out </a>
-                      </li>
+                                    <a class="dropdown-item" href="{{URL::to('/logout')}}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="http://localhost:8000/logout" method="POST" class="d-none">
+                                        @csrf
+                                        </form>
+                                    </li>
                     </ul>
                   </li>
                 </ul>
