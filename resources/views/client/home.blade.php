@@ -30,15 +30,25 @@
 
     </div>
     
-    <div class="row p-0 d-flex justify-content-between mt-5" >
+    <div class="row p-0 d-flex justify-content-center mt-5" >
     <div class="col-md-12">
     <h4 class="mb-3">Top Article</h4>
     </div>
+
+
+    @foreach($articles as $i)
+
     <div class="col-3 mb-3">
-     <div class="card shadow rounded bg-white">
+
+    <div class="card shadow rounded bg-white">
       <div class="card-body p-3">
         <a href="/cs-operator/">
-        <img class="card-img-top lazyload rounded mb-3 lazyloaded" src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-sizes="auto" alt=""></a><h6 class="card-title h6"><a class="text-dark" href="/cs-operator/">Belajar C#: Mengenal Operator Dasar pada C#</a></h6><div class="text-secondary small">Apa itu operator? dan apa saja operator dasar yang wajib diketahui pada C#? Mari kita bahas …
+        <img class="card-img-top lazyload rounded mb-3 lazyloaded" src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-sizes="auto" alt="">
+      </a>
+      <h6 class="card-title h6"><a class="text-dark" href="/cs-operator/">
+          {{$i->tittle}}</a></h6>
+          <div class="text-secondary small">
+            Apa itu operator? dan apa saja operator dasar yang wajib diketahui pada C#? Mari kita bahas …
 
         </div>
       </div>
@@ -47,61 +57,17 @@
       
     </div>       
 
-    <div class="col-3 mb-3">
-    <div class="card shadow rounded bg-white">
-      <div class="card-body p-3">
-        <a href="/cs-operator/">
-        <img class="card-img-top lazyload rounded mb-3 lazyloaded" src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-sizes="auto" alt=""></a><h6 class="card-title h6"><a class="text-dark" href="/cs-operator/">Belajar C#: Mengenal Operator Dasar pada C#</a></h6><div class="text-secondary small">Apa itu operator? dan apa saja operator dasar yang wajib diketahui pada C#? Mari kita bahas …
-
-        </div>
-      </div>
-    </div>
-      
-      
-    </div>       
-
-    <div class="col-3 mb-3">
-    <div class="card shadow rounded bg-white">
-      <div class="card-body p-3">
-        <a href="/cs-operator/">
-        <img class="card-img-top lazyload rounded mb-3 lazyloaded" src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-sizes="auto" alt=""></a><h6 class="card-title h6"><a class="text-dark" href="/cs-operator/">Belajar C#: Mengenal Operator Dasar pada C#</a></h6><div class="text-secondary small">Apa itu operator? dan apa saja operator dasar yang wajib diketahui pada C#? Mari kita bahas …
-
-        </div>
-      </div>
-    </div>
-      
-      
-    </div>   
-
-    <div class="col-3 mb-3">
-    <div class="card shadow rounded bg-white">
-      <div class="card-body p-3">
-        <a href="/cs-operator/">
-        <img class="card-img-top lazyload rounded mb-3 lazyloaded" src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-src="https://www.petanikode.com/images/cover/csharp_hu3b49f8b8f25cd93892f832f7f9614953_32751_360x0_resize_box_2.png" data-sizes="auto" alt=""></a><h6 class="card-title h6"><a class="text-dark" href="/cs-operator/">Belajar C#: Mengenal Operator Dasar pada C#</a></h6><div class="text-secondary small">Apa itu operator? dan apa saja operator dasar yang wajib diketahui pada C#? Mari kita bahas …
-
-        </div>
-      </div>
-    </div>
-      
+    @endforeach
+    {{$articles->links('pagination::bootstrap-4')}}
       
     </div> 
     <h4 class="my-3">Tag</h4>
     <div class=" col-md-6 mb-5">
+      @foreach($categories as $i) 
       <span class="mb-1 ml-1" style="display:inline-block; padding:10px; background-color:#f5f5f5;">
-          <p font-size="12" class="sc-AxjAm bDnkkj" style="margin-bottom: 0px;">HTML &amp; CSS</p>
+          <p font-size="12" class="sc-AxjAm bDnkkj" style="margin-bottom: 0px;">{{$i->nama}}</p>
       </span>
-      <span class="mb-1 ml-1" style="display:inline-block; padding:10px; background-color:#f5f5f5;">
-          <p font-size="12" class="sc-AxjAm bDnkkj" style="margin-bottom: 0px;">JavaScript</p>
-      </span>
-      <span class="mb-1 ml-1"  style="display:inline-block; padding:10px; background-color:#f5f5f5;">
-          <p font-size="12" class="sc-AxjAm bDnkkj" style="margin-bottom: 0px;">SQL</p>
-      </span>
-      <span class="mb-1 ml-1" style="display:inline-block;  padding:10px; background-color:#f5f5f5;">
-          <p font-size="12" class="sc-AxjAm bDnkkj" style="margin-bottom: 0px;">Node.js</p>
-      </span>
-      <span class="mb-1 ml-1" style="display:inline-block; padding:10px; background-color:#f5f5f5;">
-        <p font-size="12" class="sc-AxjAm bDnkkj" style="margin-bottom: 0px;">Git</p>
-    </span>
+      @endforeach
   </div>
 </div>
 </div>

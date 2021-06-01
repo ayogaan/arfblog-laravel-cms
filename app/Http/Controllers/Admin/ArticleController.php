@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
 use Str;
 use Session;
+use Auth;
 
 class ArticleController extends Controller
 {
@@ -22,7 +23,7 @@ class ArticleController extends Controller
 
     public function store(ArticleRequest $request){
         $param = $request->except('_token');
-        $param['user_id']=2;
+        $param['user_id']=Auth::user()->id;
         $param['img_url']=Str::slug($param['tittle']).'.jpg';
         if(Article::create($param)){
             Session::flash('success', 'Article has been created');

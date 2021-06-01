@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\GuestController;
 
 
 /*
@@ -18,9 +19,6 @@ use App\Http\Controllers\Admin\ArticleController;
 |
 */
 
-Route::get('/', function () {
-    return view('client.home');
-});
 
 Route::get('log', function () {
     return view('welcome');
@@ -63,8 +61,14 @@ Route::group(
         Route::put('article/{id}',[ArticleController::class,'update']);
         Route::delete('article/{id}',[ArticleController::class,'destroy']);
         
+        
     }
 );
+
+        //guest
+        Route::get('',[GuestController::class,'index']);
+        Route::get('article/{id}',[GuestController::class,'show']);
+
 
 Route::group(
     ['namespace'=>'', 'prefix' => ''],

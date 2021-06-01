@@ -14,7 +14,7 @@
                 {!! Form::model($articles,['url'=>['admin/article',$articles->id]]) !!}
                 {!! Form::hidden('id')!!}
                 <input name="_method" type="hidden" value="PUT">
-                
+
     @else
     {!! Form::open(['url'=>'admin/article']) !!}
     @endif
