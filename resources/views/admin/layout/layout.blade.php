@@ -28,7 +28,6 @@
     
     
     
-    
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="{{URL::asset('assets/css/sleek.css')}}" />
@@ -45,6 +44,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="{{URL::asset('assets/plugins/nprogress/nprogress.js')}}"></script>
+    <script src="https://cdn.tiny.cloud/1/mez7sglcwsysmi8gyjtvpfg0kubn0g565n6l9bpgmgk5px94/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
   </head>
 
   <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
@@ -128,7 +129,7 @@
                   <ul class="collapse " id="app" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       
-                      @if(Auth::user()->role_id>0)
+                     @if(Auth::user()->role_id>0)
                       <li class="">
                         <a class="sidenav-item-link" href="{{URL::to('admin/categories')}}">
                           <span class="nav-text">Category</span>
@@ -1151,7 +1152,7 @@
                       <li class="dropdown-header">
                         <img src="{{URL::asset('assets/img/user/user.png')}}" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
+                        {{ Auth::user()->name }} <small class="pt-1">{{ Auth::user()->email }}</small>
                         </div>
                       </li>
 
@@ -1243,6 +1244,16 @@
     <script src="{{URL::asset('assets/js/sleek.js')}}"></script>
   <link href="{{URL::asset('assets/options/optionswitch.css')}}" rel="stylesheet">
 <script src="{{URL::asset('assets/options/optionswitcher.js')}}"></script>
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+   });
+  </script>
 </body>
 </html>
 

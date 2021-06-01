@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ArticleController;
 
 
 /*
@@ -29,6 +30,9 @@ Route::get('article', function () {
     return view('client.article');
 });
 
+Route::get('article/form', function () {
+    return view('admin.article.form');
+});
 
 Route::group(
     ['namespace'=>'Admin', 'prefix' => 'admin'],
@@ -50,8 +54,15 @@ Route::group(
         Route::get('user/{id}/edit',[UserController::class,'edit']);
         Route::put('user/{id}',[UserController::class,'update']);
         Route::delete('user/{id}',[UserController::class,'destroy']);
-
-
+        
+        //article
+        Route::get('article',[ArticleController::class,'index']);
+        Route::get('article/create',[ArticleController::class,'create']);
+        Route::post('article',[ArticleController::class,'store']);
+        Route::get('article/{id}/edit',[ArticleController::class,'edit']);
+        Route::put('article/{id}',[ArticleController::class,'update']);
+        Route::delete('article/{id}',[ArticleController::class,'destroy']);
+        
     }
 );
 
