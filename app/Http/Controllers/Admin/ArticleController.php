@@ -24,7 +24,6 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request){
         $param = $request->except('_token');
         $param['user_id']=Auth::user()->id;
-        $param['img_url']=Str::slug($param['tittle']).'.jpg';
         if(Article::create($param)){
             Session::flash('success', 'Article has been created');
         }

@@ -25,9 +25,11 @@ class ArticleRequest extends FormRequest
     {
         $tittle = 'required';
         $article = 'required';
+        $img_url = 'required';
         return [
             'tittle'=>$tittle,
-            'article'=>$article
+            'article'=>$article,
+            'img_url' =>$img_url
         ];
     }
 }

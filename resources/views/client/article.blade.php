@@ -7,7 +7,10 @@
             <a class="text-dark" href="https://www.petanikode.com/authors/ardianta/">{{$author->name}}</a>
 <span class="small text-muted">•{{ date('j F, Y', strtotime($articles->created_at))}}</span>
 </div>
+
 <h1 class="card-title mb-3 post-title font-weight-bold">{{$articles->tittle}}</h1>
+<img src="{{$articles->img_url}}" style="width:100%" alt="" class="src">
+
 <hr>
 <div>
 <div class=" col-md-12 mb-5">

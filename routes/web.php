@@ -33,10 +33,9 @@ Route::get('article/form', function () {
 });
 
 Route::group(
-    ['namespace'=>'Admin', 'prefix' => 'admin'],
+    ['namespace'=>'Admin', 'prefix' => 'admin', 'middleware' => 'auth'],
     function (){
         Route::get('dashboard',[DashboardController::class,'index']);
-        
         //categories
         Route::get('categories',[CategoryController::class,'index']);
         Route::get('categories/create',[CategoryController::class,'create']);

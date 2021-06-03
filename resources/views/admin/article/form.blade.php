@@ -19,6 +19,8 @@
     {!! Form::open(['url'=>'admin/article']) !!}
     @endif
     {!! Form::text('tittle',null,['class'=>'form-control mb-3 mt-3','placeholder'=>'Judul Article']) !!}
+    {!! Form::text('img_url',null,['class'=>'form-control mb-3 mt-3','placeholder'=>'image url']) !!}
+    
     {!! Form::textarea('article',null,['class'=>'form-control mb-3 mt-3','placeholder'=>'tulis disini']) !!}
 
     
